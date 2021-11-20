@@ -15,4 +15,8 @@ constructor() : EntityMapper<Article, News> {
             urlToArticle = entity.url
         )
     }
+
+    override fun mapFromEntityList(entityList: List<Article>): List<News> {
+        return entityList.map { mapFromEntity(it) }
+    }
 }

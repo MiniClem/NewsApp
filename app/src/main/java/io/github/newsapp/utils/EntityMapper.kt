@@ -5,4 +5,5 @@ package io.github.newsapp.utils
  */
 interface EntityMapper<in I, out O> {
     fun mapFromEntity(entity: I): O
+    fun mapFromEntityList(entityList: List<I>): List<O>
 }
