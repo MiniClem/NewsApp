@@ -6,7 +6,8 @@ import retrofit2.http.Query
 
 interface NewsApi {
     @GET("everything")
-    suspend fun getEverything(
+    fun getEverything(
+        @Query("q") q: String,
         @Query("language") language: String = "fr",
         @Query("sortBy") sortBy: String = "publishedAt"
     ): Call<ResponseObject>

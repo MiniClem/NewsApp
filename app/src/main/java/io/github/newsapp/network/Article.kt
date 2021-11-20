@@ -10,23 +10,23 @@ data class Article(
 
     @SerializedName("author")
     @Expose
-    val author: String,
+    val author: String?,
 
     @SerializedName("title")
     @Expose
-    val title: String,
+    val title: String?,
 
     @SerializedName("description")
     @Expose
-    val description: String,
+    val description: String?,
 
     @SerializedName("url")
     @Expose
-    val url: String,
+    val url: String?,
 
     @SerializedName("urlToImage")
     @Expose
-    val urlToImage: String,
+    val urlToImage: String?,
 
     // "2021-11-19T17:39:50Z"
     @SerializedName("publishedAt")
@@ -35,5 +35,5 @@ data class Article(
 
     @SerializedName("content")
     @Expose
-    val content: String
+    val content: String?
 )

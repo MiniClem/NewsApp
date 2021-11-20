@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import io.github.newsapp.network.HeaderInterceptor
 import io.github.newsapp.network.NewsApi
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -22,6 +23,7 @@ object NewsApiModule {
     @Provides
     @Singleton
     fun provideRetrofit(client: OkHttpClient): Retrofit {
+
         return Retrofit.Builder()
             .client(client)
             .baseUrl("https://newsapi.org/v2/")
@@ -33,7 +35,8 @@ object NewsApiModule {
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder().apply {
-            interceptors().add(HeaderInterceptor())
+            addInterceptor(HeaderInterceptor())
+            addInterceptor(HttpLoggingInterceptor().apply { setLevel(HttpLoggingInterceptor.Level.BODY) })
         }.build()
     }
 }

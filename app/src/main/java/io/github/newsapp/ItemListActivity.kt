@@ -10,14 +10,14 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.widget.NestedScrollView
-import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.newsapp.model.News
 import io.github.newsapp.utils.DataState
-import javax.inject.Inject
+
 
 /**
  * An activity representing a list of Pings. This activity
@@ -28,9 +28,9 @@ import javax.inject.Inject
  * item details side-by-side using two vertical panes.
  */
 @AndroidEntryPoint
-class ItemListActivity
-@Inject
-constructor(private val newsViewModel: NewsViewModel) : AppCompatActivity() {
+class ItemListActivity : AppCompatActivity() {
+
+    private lateinit var newsViewModel: NewsViewModel
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -43,6 +43,7 @@ constructor(private val newsViewModel: NewsViewModel) : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_list)
+        newsViewModel = ViewModelProvider(this)[NewsViewModel::class.java]
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -81,34 +82,30 @@ constructor(private val newsViewModel: NewsViewModel) : AppCompatActivity() {
         private val twoPane: Boolean
     ) : RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
 
-        private val values = emptyList<News>() as ArrayList
-        private val onClickListener: View.OnClickListener
-
-        init {
-            onClickListener = View.OnClickListener { v ->
-                val item = v.tag as News
-                if (twoPane) {
-                    val fragment = ItemDetailFragment().apply {
-                        arguments = Bundle().apply {
-                            putString(ItemDetailFragment.ARG_ITEM_TITLE, item.title)
-                            putString(ItemDetailFragment.ARG_ITEM_DESCRIPTION, item.description)
-                            putString(ItemDetailFragment.ARG_ITEM_URL_ARTICLE, item.urlToArticle)
-                            putString(ItemDetailFragment.ARG_ITEM_URL_IMAGE, item.urlToImage)
-                        }
+        private val values = ArrayList<News>()
+        private val onClickListener: View.OnClickListener = View.OnClickListener { v ->
+            val item = v.tag as News
+            if (twoPane) {
+                val fragment = ItemDetailFragment().apply {
+                    arguments = Bundle().apply {
+                        putString(ItemDetailFragment.ARG_ITEM_TITLE, item.title)
+                        putString(ItemDetailFragment.ARG_ITEM_DESCRIPTION, item.description)
+                        putString(ItemDetailFragment.ARG_ITEM_URL_ARTICLE, item.urlToArticle)
+                        putString(ItemDetailFragment.ARG_ITEM_URL_IMAGE, item.urlToImage)
                     }
-                    parentActivity.supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.item_detail_container, fragment)
-                        .commit()
-                } else {
-                    val intent = Intent(v.context, ItemDetailActivity::class.java).apply {
-                        putExtra(ItemDetailFragment.ARG_ITEM_TITLE, item.title)
-                        putExtra(ItemDetailFragment.ARG_ITEM_DESCRIPTION, item.description)
-                        putExtra(ItemDetailFragment.ARG_ITEM_URL_ARTICLE, item.urlToArticle)
-                        putExtra(ItemDetailFragment.ARG_ITEM_URL_IMAGE, item.urlToImage)
-                    }
-                    v.context.startActivity(intent)
                 }
+                parentActivity.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.item_detail_container, fragment)
+                    .commit()
+            } else {
+                val intent = Intent(v.context, ItemDetailActivity::class.java).apply {
+                    putExtra(ItemDetailFragment.ARG_ITEM_TITLE, item.title)
+                    putExtra(ItemDetailFragment.ARG_ITEM_DESCRIPTION, item.description)
+                    putExtra(ItemDetailFragment.ARG_ITEM_URL_ARTICLE, item.urlToArticle)
+                    putExtra(ItemDetailFragment.ARG_ITEM_URL_IMAGE, item.urlToImage)
+                }
+                v.context.startActivity(intent)
             }
         }
 
