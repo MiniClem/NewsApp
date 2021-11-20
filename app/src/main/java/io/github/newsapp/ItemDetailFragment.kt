@@ -26,11 +26,11 @@ class ItemDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
-            if (it.containsKey(ARG_ITEM_ID)) {
+            if (it.containsKey(ARG_ITEM_TITLE)) {
                 // Load the dummy content specified by the fragment
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
-                item = DummyContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]
+                item = DummyContent.ITEM_MAP[it.getString(ARG_ITEM_TITLE)]
                 activity?.findViewById<CollapsingToolbarLayout>(R.id.toolbar_layout)?.title = item?.content
             }
         }
@@ -53,6 +53,9 @@ class ItemDetailFragment : Fragment() {
          * The fragment argument representing the item ID that this fragment
          * represents.
          */
-        const val ARG_ITEM_ID = "item_id"
+        const val ARG_ITEM_TITLE = "arg_item_title"
+        const val ARG_ITEM_DESCRIPTION = "arg_item_description"
+        const val ARG_ITEM_URL_IMAGE = "arg_item_url_image"
+        const val ARG_ITEM_URL_ARTICLE = "arg_item_url_article"
     }
 }

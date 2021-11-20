@@ -2,19 +2,22 @@ package io.github.newsapp
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.core.widget.NestedScrollView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import androidx.appcompat.widget.Toolbar
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.widget.NestedScrollView
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
-
-import io.github.newsapp.dummy.DummyContent
+import io.github.newsapp.model.News
+import io.github.newsapp.utils.DataState
+import javax.inject.Inject
 
 /**
  * An activity representing a list of Pings. This activity
@@ -25,13 +28,17 @@ import io.github.newsapp.dummy.DummyContent
  * item details side-by-side using two vertical panes.
  */
 @AndroidEntryPoint
-class ItemListActivity : AppCompatActivity() {
+class ItemListActivity
+@Inject
+constructor(private val newsViewModel: NewsViewModel) : AppCompatActivity() {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
     private var twoPane: Boolean = false
+
+    private lateinit var adapter: SimpleItemRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +47,6 @@ class ItemListActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.title = title
-
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
 
         if (findViewById<NestedScrollView>(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
@@ -55,35 +57,55 @@ class ItemListActivity : AppCompatActivity() {
         }
 
         setupRecyclerView(findViewById(R.id.item_list))
+        setupObservers()
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
-        recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, twoPane)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = SimpleItemRecyclerViewAdapter(this, twoPane)
+        recyclerView.adapter = adapter
     }
 
-    class SimpleItemRecyclerViewAdapter(private val parentActivity: ItemListActivity,
-                                        private val values: List<DummyContent.DummyItem>,
-                                        private val twoPane: Boolean) :
-            RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
+    private fun setupObservers() {
+        newsViewModel.getNews().observe(this, { datastate ->
+            when (datastate) {
+                is DataState.Loading -> println("Loading...")
+                is DataState.Success -> adapter.setDataSet(datastate.data)
+                is DataState.Error -> datastate.throwable.printStackTrace()
+            }
+        })
+    }
 
+    class SimpleItemRecyclerViewAdapter(
+        private val parentActivity: ItemListActivity,
+        private val twoPane: Boolean
+    ) : RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
+
+        private val values = emptyList<News>() as ArrayList
         private val onClickListener: View.OnClickListener
 
         init {
             onClickListener = View.OnClickListener { v ->
-                val item = v.tag as DummyContent.DummyItem
+                val item = v.tag as News
                 if (twoPane) {
                     val fragment = ItemDetailFragment().apply {
                         arguments = Bundle().apply {
-                            putString(ItemDetailFragment.ARG_ITEM_ID, item.id)
+                            putString(ItemDetailFragment.ARG_ITEM_TITLE, item.title)
+                            putString(ItemDetailFragment.ARG_ITEM_DESCRIPTION, item.description)
+                            putString(ItemDetailFragment.ARG_ITEM_URL_ARTICLE, item.urlToArticle)
+                            putString(ItemDetailFragment.ARG_ITEM_URL_IMAGE, item.urlToImage)
                         }
                     }
                     parentActivity.supportFragmentManager
-                            .beginTransaction()
-                            .replace(R.id.item_detail_container, fragment)
-                            .commit()
+                        .beginTransaction()
+                        .replace(R.id.item_detail_container, fragment)
+                        .commit()
                 } else {
                     val intent = Intent(v.context, ItemDetailActivity::class.java).apply {
-                        putExtra(ItemDetailFragment.ARG_ITEM_ID, item.id)
+                        putExtra(ItemDetailFragment.ARG_ITEM_TITLE, item.title)
+                        putExtra(ItemDetailFragment.ARG_ITEM_DESCRIPTION, item.description)
+                        putExtra(ItemDetailFragment.ARG_ITEM_URL_ARTICLE, item.urlToArticle)
+                        putExtra(ItemDetailFragment.ARG_ITEM_URL_IMAGE, item.urlToImage)
                     }
                     v.context.startActivity(intent)
                 }
@@ -92,14 +114,17 @@ class ItemListActivity : AppCompatActivity() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_list_content, parent, false)
+                .inflate(R.layout.item_list_content, parent, false)
             return ViewHolder(view)
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = values[position]
-            holder.idView.text = item.id
-            holder.contentView.text = item.content
+            Glide.with(parentActivity)
+                .load(item.urlToImage)
+                .centerCrop()
+                .into(holder.articleImageView);
+            holder.titleView.text = item.title
 
             with(holder.itemView) {
                 tag = item
@@ -109,9 +134,15 @@ class ItemListActivity : AppCompatActivity() {
 
         override fun getItemCount() = values.size
 
+        fun setDataSet(data: List<News>) {
+            this.values.clear()
+            this.values.addAll(data)
+            notifyDataSetChanged()
+        }
+
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-            val idView: TextView = view.findViewById(R.id.id_text)
-            val contentView: TextView = view.findViewById(R.id.content)
+            val articleImageView: ImageView = view.findViewById(R.id.article_image)
+            val titleView: TextView = view.findViewById(R.id.title)
         }
     }
 }

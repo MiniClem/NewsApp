@@ -1,4 +1,4 @@
-package io.github.newsapp.network
+package io.github.newsapp.utils
 
 sealed class DataState<out T> {
 

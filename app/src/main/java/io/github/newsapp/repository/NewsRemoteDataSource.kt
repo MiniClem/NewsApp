@@ -1,7 +1,7 @@
 package io.github.newsapp.repository
 
 import io.github.newsapp.model.News
-import io.github.newsapp.network.DataState
+import io.github.newsapp.utils.DataState
 import io.github.newsapp.network.NewsApi
 import io.github.newsapp.network.ResponseMapper
 import kotlinx.coroutines.flow.Flow

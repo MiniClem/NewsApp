@@ -9,7 +9,7 @@ class ResponseMapper
 constructor() : EntityMapper<Article, News> {
     override fun mapFromEntity(entity: Article): News {
         return News(
-            titre = entity.title,
+            title = entity.title,
             urlToImage = entity.urlToImage,
             description = entity.description,
             urlToArticle = entity.url
