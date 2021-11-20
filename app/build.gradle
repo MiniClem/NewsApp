@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    def gson_version = '2.9.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
@@ -54,15 +55,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Network
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation "com.squareup.retrofit2:retrofit:$gson_version"
+    // Converter
+    implementation "com.squareup.retrofit2:converter-gson:$gson_version"
     // Serialization
     implementation 'com.google.code.gson:gson:2.8.9'
     //DI
     implementation "com.google.dagger:hilt-android:2.38.1"
     kapt "com.google.dagger:hilt-compiler:2.38.1"
-    // Room
-    def room_version = "2.3.0"
-
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
 }

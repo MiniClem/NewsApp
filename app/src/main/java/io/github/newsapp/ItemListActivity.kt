@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import dagger.hilt.android.AndroidEntryPoint
 
 import io.github.newsapp.dummy.DummyContent
 
@@ -23,6 +24,7 @@ import io.github.newsapp.dummy.DummyContent
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
+@AndroidEntryPoint
 class ItemListActivity : AppCompatActivity() {
 
     /**
