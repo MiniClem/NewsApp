@@ -20,11 +20,6 @@ class ItemDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_item_detail)
         setSupportActionBar(findViewById(R.id.detail_toolbar))
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own detail action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
         // Show the Up button in the action bar.
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -45,6 +40,18 @@ class ItemDetailActivity : AppCompatActivity() {
                     putString(
                         ItemDetailFragment.ARG_ITEM_TITLE,
                         intent.getStringExtra(ItemDetailFragment.ARG_ITEM_TITLE)
+                    )
+                    putString(
+                        ItemDetailFragment.ARG_ITEM_DESCRIPTION,
+                        intent.getStringExtra(ItemDetailFragment.ARG_ITEM_DESCRIPTION)
+                    )
+                    putString(
+                        ItemDetailFragment.ARG_ITEM_URL_ARTICLE,
+                        intent.getStringExtra(ItemDetailFragment.ARG_ITEM_URL_ARTICLE)
+                    )
+                    putString(
+                        ItemDetailFragment.ARG_ITEM_URL_IMAGE,
+                        intent.getStringExtra(ItemDetailFragment.ARG_ITEM_URL_IMAGE)
                     )
                 }
             }
