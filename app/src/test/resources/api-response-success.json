@@ -1,0 +1,162 @@
+{
+  "status": "ok",
+  "totalResults": 12,
+  "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "Kotlin 1.6.0 est disponible et introduit de nouvelles fonctionnalités de langage, des optimisations et des améliorations des fonctionnalités existantes",
+      "description": "Kotlin 1.6.0 est disponible et introduit de nouvelles fonctionnalit�s de langage, des optimisations et des am�liorations des fonctionnalit�s existantes, ainsi que de nombreuses am�liorations de la biblioth�que standard Kotlin. Certaines fonctionnalit�s passen…",
+      "url": "https://kotlin.developpez.com/actu/328867/Kotlin-1-6-0-est-disponible-et-introduit-de-nouvelles-fonctionnalites-de-langage-des-optimisations-et-des-ameliorations-des-fonctionnalites-existantes/",
+      "urlToImage": "https://www.developpez.com/images/logos/kotlin.png",
+      "publishedAt": "2021-11-17T09:03:00Z",
+      "content": "Kotlin 1.6.0 est disponible et introduit de nouvelles fonctionnalits de langage, des optimisations et des amliorations des fonctionnalits existantes, ainsi que de nombreuses amliorations de la biblio… [+13962 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Breandan.net"
+      },
+      "author": null,
+      "title": "Computation graphs and graph computation (2020)",
+      "description": "Comments",
+      "url": "https://breandan.net/2020/06/30/graph-computation/",
+      "urlToImage": null,
+      "publishedAt": "2021-11-01T14:09:45Z",
+      "content": "Computation graphs and graph computation\r\n30 Jun 2020Research has begun to reveal many algorithms can be expressed as matrix multiplication, suggesting an unrealized connection between linear algebra… [+53088 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "Oracle rétropédale en rendant son JDK 17 accessible sans coût pour une utilisation commerciale en raison de son abandon par les acteurs du développement informatique qui lui préfèrent l'openJDK",
+      "description": "Oracle rétropédale en rendant son JDK 17 accessible sans coût pour une utilisation commerciale en raison de son abandon par les acteurs du développement informatique\nQui lui préfèrent l'openJDKLa décision d'Oracle est-elle tardive ? Peut-on s'y fier en raison…",
+      "url": "https://java.developpez.com/actu/328446/Oracle-retropedale-en-rendant-son-JDK-17-accessible-sans-cout-pour-une-utilisation-commerciale-en-raison-de-son-abandon-par-les-acteurs-du-developpement-informatique-qui-lui-preferent-l-openJDK/",
+      "urlToImage": "https://www.developpez.com/images/logos/java.png",
+      "publishedAt": "2021-11-01T06:08:00Z",
+      "content": "La dcision dOracle est-elle tardive ? Peut-on sy fier en raison de la complexit des termes de la nouvelle licence Oracle No-Fee Terms and Conditions (NFTC) ? Quel impact sur lavenir de sa version du … [+4289 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "ZDNet France"
+      },
+      "author": "François Tonic",
+      "title": "Tout comprendre à Java",
+      "description": "La première version utilisable de Java sort en 1995. Oui, depuis, de l'eau a coulé sous les ponts. Voici tout ce qu'il faut savoir sur cette brique indispensable pour les développeurs, et les métiers.",
+      "url": "https://www.zdnet.fr/pratique/tout-comprendre-a-java-39931513.htm",
+      "urlToImage": "https://d1fmx1rbmqrxrr.cloudfront.net/zdnet/i/edit/ne/2021/09/logo_java.jpg",
+      "publishedAt": "2021-10-29T08:00:00Z",
+      "content": "La première version utilisable de Java sort officiellement le 23 mai 1995. La genèse du projet remonte à 1991, avec le projet Oak, mené par une petite équipe de Sun Microsystems. Trois ingénieurs, Na… [+6948 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "La version 12 de Next.js, l'outil de développement open source construit au tour de Node.js, est disponible, avec un compilateur Rust 17x plus rapide que Babel et une priorité aux modules ES",
+      "description": "Il existe une multitude d�outils javascript disponibles pour le d�veloppement web. Next.js est un framework de d�veloppement open source construit au-dessus de Node.js permettant aux applications web bas�es sur React d'offrir des fonctionnalit�s telles que le…",
+      "url": "https://javascript.developpez.com/actu/328335/La-version-12-de-Next-js-l-outil-de-developpement-open-source-construit-au-tour-de-Node-js-est-disponible-avec-un-compilateur-Rust-17x-plus-rapide-que-Babel-et-une-priorite-aux-modules-ES/",
+      "urlToImage": "https://www.developpez.com/images/logos/javascript.png",
+      "publishedAt": "2021-10-27T10:15:00Z",
+      "content": "Il existe une multitude doutils javascript disponibles pour le dveloppement web. Next.js est un framework de dveloppement open source construit au-dessus de Node.js permettant aux applications web ba… [+13217 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "La version 12 de Next.js, l'outil de développement open source construit autour de Node.js, est disponible, avec un compilateur Rust 17x plus rapide que Babel et une priorité aux modules ES",
+      "description": "Il existe une multitude d�outils javascript disponibles pour le d�veloppement web. Next.js est un framework de d�veloppement open source construit au-dessus de Node.js permettant aux applications web bas�es sur React d'offrir des fonctionnalit�s telles que le…",
+      "url": "https://javascript.developpez.com/actu/328335/La-version-12-de-Next-js-l-outil-de-developpement-open-source-construit-autour-de-Node-js-est-disponible-avec-un-compilateur-Rust-17x-plus-rapide-que-Babel-et-une-priorite-aux-modules-ES/",
+      "urlToImage": "https://www.developpez.com/images/logos/javascript.png",
+      "publishedAt": "2021-10-27T10:15:00Z",
+      "content": "Il existe une multitude doutils javascript disponibles pour le dveloppement web. Next.js est un framework de dveloppement open source construit au-dessus de Node.js permettant aux applications web ba… [+13217 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "TeamCity : la version 2021.2 du serveur de CI/CD de JetBrains est disponible, avec l'authentification à deux facteurs et une meilleure intégration avec Perforce, Space et Azure DevOps",
+      "description": "TeamCity : la version 2021.2 du serveur de CI/CD de JetBrains est disponible\navec l'authentification à deux facteurs et une meilleure intégration avec Perforce, Space et Azure DevOpsTeamCity 2021.2 est disponible. La deuxième mise à jour majeure de l'année du…",
+      "url": "https://jetbrains.developpez.com/actu/328328/TeamCity-la-version-2021-2-du-serveur-de-CI-CD-de-JetBrains-est-disponible-avec-l-authentification-a-deux-facteurs-et-une-meilleure-integration-avec-Perforce-Space-et-Azure-DevOps/",
+      "urlToImage": "https://www.developpez.com/images/logos/jetbrains.png",
+      "publishedAt": "2021-10-27T08:52:00Z",
+      "content": "TeamCity 2021.2 est disponible. La deuxime mise jour majeure de l'anne du serveur d'intgration continue (CI) et de livraison continue (CD) de JetBrains introduit l'authentification deux facteurs, app… [+5853 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Lemondeinformatique.fr"
+      },
+      "author": "Paul Krill, IDG NS (adapté par Jean Elyan)",
+      "title": "JetBrains dévoile la plateforme de qualité de code Qodana",
+      "description": "Dénommée Qodana, la plateforme de surveillance de la qualité du code de JetBrains s'intègre à l'environnement de développement IntelliJ et supporte...",
+      "url": "https://www.lemondeinformatique.fr/actualites/lire-jetbrains-devoile-la-plateforme-de-qualite-de-code-qodana-84601.html",
+      "urlToImage": "https://images.itnewsinfo.com/lmi/articles/grande/000000081730.jpg",
+      "publishedAt": "2021-10-25T12:23:30Z",
+      "content": "Dnomme Qodana, la plateforme de surveillance de la qualit du code de JetBrains s'intgre l'environnement de dveloppement IntelliJ et supporte Java et Kotlin. L'ajout du support d'autres langages dont … [+2472 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Publickey1.jp"
+      },
+      "author": "jniino",
+      "title": "Kotlin Multiplatform Mobile（KMM）がベータへ。コンカレント処理でのメモリリークフリー、iOSエコシステムとの連携強化など",
+      "description": "プログラミング言語「Kotlin」の開発元であるJetBrainsは、開催中のオンラインイベント「Kotlin 2021 Premier Online Event」で、Kotlin Multiplatform Mobile（KMM）を来年、...",
+      "url": "https://www.publickey1.jp/blog/21/kotlin_multiplatform_mobilekmmios.html",
+      "urlToImage": "https://www.publickey1.jp/2021/kmm_beta02.gif",
+      "publishedAt": "2021-10-24T14:55:05Z",
+      "content": "プログラミング言語「Kotlin」の開発元であるJetBrainsは、開催中のオンラインイベント「Kotlin 2021 Premier Online Event」で、Kotlin Multiplatform Mobile（KMM）を来年、2022年春にベータ版としてリリースする計画であることを発表しました。 We are on the verge of reaching the next im… [+42 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "L'édition Rust 2021 et la version stable Rust 1.56 sont maintenant disponibles en téléchargement, la nouvelle édition du langage inclut la prise en charge des captures disjointes",
+      "description": "L'édition Rust 2021 et la version stable Rust 1.56 sont maintenant disponibles en téléchargement\nla nouvelle édition du langage inclut la prise en charge des captures disjointesL'équipe Rust a publié la version 1.56 du langage de programmation dans les délais…",
+      "url": "https://rust.developpez.com/actu/328207/L-edition-Rust-2021-et-la-version-stable-Rust-1-56-sont-maintenant-disponibles-en-telechargement-la-nouvelle-edition-du-langage-inclut-la-prise-en-charge-des-captures-disjointes/",
+      "urlToImage": "https://www.developpez.com/images/logos/rust.png",
+      "publishedAt": "2021-10-23T14:49:00Z",
+      "content": "L'quipe Rust a publi la version 1.56 du langage de programmation dans les dlais prvus, ce qui marque galement le dbut de la nouvelle dition Rust 2021. Les innovations les plus importantes comprennent… [+9241 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "L'édition Rust 2021 et la version stable Rust 1.56 sont maintenant disponibles en téléchargement, la nouvelle édition du langage inclut la prise en charge des captures disjointes",
+      "description": "L'édition Rust 2021 et la version stable Rust 1.56 sont maintenant disponibles en téléchargement\nla nouvelle édition du langage inclut la prise en charge des captures disjointesL'équipe Rust a publié la version 1.56 du langage de programmation dans les délais…",
+      "url": "https://rust.developpez.com/actu/328204/L-edition-Rust-2021-et-la-version-stable-Rust-1-56-sont-maintenant-disponibles-en-telechargement-la-nouvelle-edition-du-langage-inclut-la-prise-en-charge-des-captures-disjointes/",
+      "urlToImage": "https://www.developpez.com/images/logos/rust.png",
+      "publishedAt": "2021-10-23T12:29:00Z",
+      "content": "L'quipe Rust a publi la version 1.56 du langage de programmation dans les dlais prvus, ce qui marque galement le dbut de la nouvelle dition Rust 2021. Les innovations les plus importantes comprennent… [+9239 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Developpez.com"
+      },
+      "author": null,
+      "title": "La version 17 de Node.js, le moteur d'exécution JavaScript, est disponible, avec OpenSSL 3, bien que Deno, son concurrent, estime que la création des projets Node peut devenir une tâche ardue",
+      "description": "L'�quipe de d�veloppement de Node.js a annonc� le 19 octobre la sortie de la version 17 de Node.js. Cette version est livr�e avec OpenSSL 3 et la version 9.5 du moteur JavaScript V8. � L'inclusion d'OpenSSL 3.0 est une grande nouveaut�. Cela nous donne une vo…",
+      "url": "https://javascript.developpez.com/actu/328176/La-version-17-de-Node-js-le-moteur-d-execution-JavaScript-est-disponible-avec-OpenSSL-3-bien-que-Deno-son-concurrent-estime-que-la-creation-des-projets-Node-peut-devenir-une-tache-ardue/",
+      "urlToImage": "https://www.developpez.com/images/logos/nodejs.png",
+      "publishedAt": "2021-10-22T05:08:00Z",
+      "content": "L'quipe de dveloppement de Node.js a annonc le 19 octobre la sortie de la version 17 de Node.js. Cette version est livre avec OpenSSL 3 et la version 9.5 du moteur JavaScript V8. L'inclusion d'OpenSS… [+14180 chars]"
+    }
+  ]
+}
