@@ -3,6 +3,9 @@ package io.github.newsapp.network
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Serialized object from API call
+ */
 data class Article(
     @SerializedName("source")
     @Expose

@@ -3,6 +3,9 @@ package io.github.newsapp.network
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+/**
+ * The main response object from NewsApi
+ */
 data class ResponseObject(
     @SerializedName("status")
     @Expose

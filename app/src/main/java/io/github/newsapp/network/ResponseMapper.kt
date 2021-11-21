@@ -4,6 +4,9 @@ import io.github.newsapp.model.News
 import io.github.newsapp.utils.EntityMapper
 import javax.inject.Inject
 
+/**
+ * Mapping from response object article to model object
+ */
 class ResponseMapper
 @Inject
 constructor() : EntityMapper<Article, News> {

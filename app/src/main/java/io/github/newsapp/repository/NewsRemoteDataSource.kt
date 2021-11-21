@@ -11,6 +11,9 @@ import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import javax.inject.Inject
 
+/**
+ * Remote data source for articles using the News Api for a viewmodel
+ */
 class NewsRemoteDataSource
 @Inject
 constructor(
